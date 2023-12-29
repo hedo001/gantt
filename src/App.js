@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Gantt from "./components/Gantt";
 import Toolbar from "./components/Toolbar";
-import MessageArea from "./components/MessageArea";
+// import MessageArea from "./components/MessageArea";
 import "./App.css";
 
 const data = {

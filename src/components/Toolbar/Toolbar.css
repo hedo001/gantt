@@ -1,5 +1,5 @@
 .zoom-bar {
-  background: #ededed;
+  background: #b6effa;
   height: 40px;
   line-height: 40px;
   padding: 5px 10px;
@@ -15,10 +15,10 @@
   text-align: center;
   width: 70px;
 
-  border: 1px solid #D9D9D9;
+  /* border: 1px solid #D9D9D9; */
   border-radius: 2px;
   background: #fff;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0,0,0);
 }
 
 .radio-label > input[type=radio] {
@@ -29,7 +29,7 @@
 }
 
 .radio-label-active {
-  background: #a0a0a0;
-  color: white;
+  background: #54f02e;
+  color: rgb(0, 0, 0);
   border-color: #707070;
 }

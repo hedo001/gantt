@@ -1,48 +1,56 @@
-import React, { Component } from 'react';
-import { gantt } from 'dhtmlx-gantt';
-import 'dhtmlx-gantt/codebase/dhtmlxgantt.css';
+import React, { Component } from "react";
+import { gantt } from "dhtmlx-gantt";
+import "dhtmlx-gantt/codebase/dhtmlxgantt.css";
 
 export default class Gantt extends Component {
-
   // instance of gantt.dataProcessor
   dataProcessor = null;
 
   initZoom() {
     gantt.ext.zoom.init({
       levels: [
+        // {
+        //   name: "Hours",
+        //   scale_height: 60,
+        //   min_column_width: 30,
+        //   scales: [
+        //     { unit: "day", step: 1, format: "%d %M" },
+        //     { unit: "hour", step: 1, format: "%H" },
+        //   ],
+        // },
         {
-          name: 'Hours',
-          scale_height: 60,
-          min_column_width: 30,
-          scales: [
-            { unit: 'day', step: 1, format: '%d %M' },
-            { unit: 'hour', step: 1, format: '%H' }
-          ]
-        },
-        {
-          name: 'Days',
-          scale_height: 60,
-          min_column_width: 70,
-          scales: [
-            { unit: 'week', step: 1, format: 'Week #%W' },
-            { unit: 'day', step: 1, format: '%d %M' }
-          ]
-        },
-        {
-          name: 'Months',
+          name: "Days",
           scale_height: 60,
           min_column_width: 70,
           scales: [
-            { unit: "month", step: 1, format: '%F' },
-            { unit: 'week', step: 1, format: '#%W' }
-          ]
-        }
-      ]
+            { unit: "week", step: 1, format: "Week #%W" },
+            { unit: "day", step: 1, format: "%d %M" },
+          ],
+        },
+        {
+          name: "Months",
+          scale_height: 60,
+          min_column_width: 70,
+          scales: [
+            { unit: "month", step: 1, format: "%F" },
+            { unit: "week", step: 1, format: "#%W" },
+          ],
+        },
+        // {
+        //   name: "Year",
+        //   scale_height: 60,
+        //   min_column_width: 70,
+        //   scales: [
+        //     { unit: "year", step: 1, format: "%y" },
+        //     { unit: "month", step: 1, format: "%F" },
+        //   ],
+        // },
+      ],
     });
   }
 
   setZoom(value) {
-    if(!gantt.ext.zoom.getLevels()){
+    if (!gantt.ext.zoom.getLevels()) {
       this.initZoom();
     }
     gantt.ext.zoom.setLevel(value);
@@ -92,8 +100,10 @@ export default class Gantt extends Component {
     this.setZoom(zoom);
     return (
       <div
-        ref={(input) => { this.ganttContainer = input }}
-        style={{ width: '100%', height: '100%' }}
+        ref={(input) => {
+          this.ganttContainer = input;
+        }}
+        style={{ width: "100%", height: "100%" }}
       ></div>
     );
   }
